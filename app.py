@@ -24,14 +24,15 @@ set_theme()
 # Sidebar
 with st.sidebar:
 
-    st.markdown("# EmoSens AI")
-
     st.markdown(
         """
-        <span style="color:#94a3b8;">
-        Multimodal Emotion Detection<br>
-        using Facial Expressions and Speech
-        </span>
+        <div style="text-align: center; margin-bottom: 10px; padding: 10px 0;">
+            <h1 style="font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; display: inline-block;">🧠 EmoSens AI</h1>
+            <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.5; margin: 8px 0 0 0;">
+                Multimodal Emotion Detection<br>
+                using Facial Expressions and Speech
+            </p>
+        </div>
         """,
         unsafe_allow_html=True
     )

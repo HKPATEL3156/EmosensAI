@@ -18,23 +18,44 @@ def multimodal():
     st.markdown("<div class='line'></div>", unsafe_allow_html=True)
 
     # Sidebar / Page settings for Weights
-    st.sidebar.markdown("### Fusion Settings")
+    st.sidebar.markdown(
+        """
+        <div style="margin-top: 10px; margin-bottom: 5px;">
+            <span style="font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.05em; text-transform: uppercase;">🔮 Fusion Settings</span>
+            <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">Adjust Face vs Speech influence:</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
     w_face = st.sidebar.slider(
         "Face Model Weight (%)",
         min_value=0,
         max_value=100,
         value=50,
         step=5,
-        help="Adjust how much influence the facial expression model has on the final prediction."
+        help="Adjust how much influence the facial expression model has on the final prediction.",
+        label_visibility="collapsed"
     ) / 100.0
     w_speech = 1.0 - w_face
 
     st.sidebar.markdown(
         f"""
-        **Weight Distribution:**
-        - 👤 Face: `{w_face * 100:.0f}%`
-        - 🔊 Speech: `{w_speech * 100:.0f}%`
-        """
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 16px; margin-top: 10px;">
+            <div style="font-size: 11px; color: #94a3b8; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">
+                ⚖️ Weight Distribution
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: white; margin-bottom: 8px;">
+                <span>👤 Face: {w_face * 100:.0f}%</span>
+                <span>🔊 Speech: {w_speech * 100:.0f}%</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; display: flex;">
+                <div style="width: {w_face * 100:.0f}%; background: #3b82f6; transition: width 0.3s ease;"></div>
+                <div style="width: {w_speech * 100:.0f}%; background: #8b5cf6; transition: width 0.3s ease;"></div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
     left, right = st.columns(2, gap="large")

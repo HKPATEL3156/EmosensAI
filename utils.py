@@ -134,58 +134,51 @@ def set_theme():
     /* Sidebar styling */
     section[data-testid="stSidebar"] {
         background: #090d16 !important;
-        border-right: 1px solid #1e293b !important;
-    }
-
-    section[data-testid="stSidebar"] h1 {
-        font-size: 32px !important;
-        font-weight: 800 !important;
-        background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        margin-bottom: 5px !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
     }
 
     section[data-testid="stSidebar"] hr {
         border: 0 !important;
         height: 1px !important;
-        background: #1e293b !important;
+        background: rgba(255, 255, 255, 0.06) !important;
         margin: 20px 0 !important;
     }
 
-    /* Custom navigation menu */
+    /* Custom navigation menu - Flat SaaS Style */
     div[role="radiogroup"] {
         display: flex !important;
         flex-direction: column !important;
-        gap: 8px !important;
+        gap: 4px !important;
+        padding: 0 !important;
     }
 
     div[role="radiogroup"] > label {
-        background: #111827 !important;
-        border: 1px solid #1f2937 !important;
-        border-radius: 10px !important;
-        padding: 12px 16px !important;
-        color: #9ca3af !important;
+        background: transparent !important;
+        border: 1px solid transparent !important;
+        border-radius: 8px !important;
+        padding: 10px 14px !important;
+        color: #94a3b8 !important;
         font-weight: 500 !important;
-        transition: all 0.25s ease !important;
+        font-size: 14.5px !important;
+        transition: all 0.15s ease !important;
         cursor: pointer !important;
         width: 100% !important;
     }
 
     div[role="radiogroup"] > label:hover {
-        background: #1f2937 !important;
-        border-color: #374151 !important;
-        color: white !important;
-        transform: translateX(5px) !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: #f1f5f9 !important;
+        transform: none !important;
     }
 
-    /* Selected state using :has() */
+    /* Selected state - Flat SaaS Style */
     div[role="radiogroup"] > label:has(input:checked) {
-        background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
-        border: none !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
         color: white !important;
-        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4) !important;
-        transform: translateX(5px) !important;
+        font-weight: 600 !important;
+        box-shadow: none !important;
+        transform: none !important;
     }
 
     /* Hide default radio circle */
