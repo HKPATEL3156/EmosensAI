@@ -43,10 +43,10 @@ with st.sidebar:
     page = st.radio(
         "Navigation",
         [
-            "Home",
-            "Face Emotion",
-            "Speech Emotion",
-            "Multimodal Emotion"
+            "🏠 Home",
+            "👤 Face Emotion",
+            "🔊 Speech Emotion",
+            "🔮 Multimodal Fusion"
         ],
         label_visibility="collapsed"
     )
@@ -57,13 +57,13 @@ with st.sidebar:
 
 
 # Routing
-if page == "Home":
+if "Home" in page:
     home()
 
-elif page == "Face Emotion":
+elif "Face" in page:
     face()
 
-elif page == "Speech Emotion":
+elif "Speech" in page:
     speech()
 
 else:

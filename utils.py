@@ -131,34 +131,71 @@ def set_theme():
 
     }
     
-    /* Sidebar */
-
-    section[data-testid="stSidebar"]{
-        background:#0f172a;
-        border-right:1px solid #1e293b;
+    /* Sidebar styling */
+    section[data-testid="stSidebar"] {
+        background: #090d16 !important;
+        border-right: 1px solid #1e293b !important;
     }
 
-    section[data-testid="stSidebar"] h1{
-        font-size:34px;
-        font-weight:700;
+    section[data-testid="stSidebar"] h1 {
+        font-size: 32px !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        margin-bottom: 5px !important;
     }
 
-    section[data-testid="stSidebar"] h3{
-        color:white;
-        margin-bottom:10px;
+    section[data-testid="stSidebar"] hr {
+        border: 0 !important;
+        height: 1px !important;
+        background: #1e293b !important;
+        margin: 20px 0 !important;
     }
 
-    section[data-testid="stSidebar"] p{
-        color:#94a3b8;
+    /* Custom navigation menu */
+    div[role="radiogroup"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
     }
 
-    section[data-testid="stSidebar"] hr{
-        border:1px solid #1e293b;
+    div[role="radiogroup"] > label {
+        background: #111827 !important;
+        border: 1px solid #1f2937 !important;
+        border-radius: 10px !important;
+        padding: 12px 16px !important;
+        color: #9ca3af !important;
+        font-weight: 500 !important;
+        transition: all 0.25s ease !important;
+        cursor: pointer !important;
+        width: 100% !important;
     }
 
-    div[role="radiogroup"] label{
-        border-radius:10px;
-        padding:8px;
+    div[role="radiogroup"] > label:hover {
+        background: #1f2937 !important;
+        border-color: #374151 !important;
+        color: white !important;
+        transform: translateX(5px) !important;
+    }
+
+    /* Selected state using :has() */
+    div[role="radiogroup"] > label:has(input:checked) {
+        background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+        border: none !important;
+        color: white !important;
+        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4) !important;
+        transform: translateX(5px) !important;
+    }
+
+    /* Hide default radio circle */
+    div[role="radiogroup"] > label > div:first-child {
+        display: none !important;
+    }
+    
+    /* Fix text color inside selected radio */
+    div[role="radiogroup"] > label:has(input:checked) div {
+        color: white !important;
     }
 
     </style>
